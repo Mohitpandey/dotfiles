@@ -1,0 +1,19 @@
+alias cls='clear'
+alias u='cd ..'
+alias src='source ~/.bashrc'
+alias vib='subl ~/.bashrc'
+alias l='ls -G -ltr'
+alias la='ls -G -lat'
+alias ws="cd $DEVELOPMENT/workspace"
+alias and="android"
+alias ass="adb start-server"
+alias aks="adb kill-server"
+alias gf="git-flow"
+alias au="adb uninstall com.nytimes.android"
+alias showHidden='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'
+alias hideHidden='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'
+
+# GREP_COLOR=bright yellow on black bg.
+# use GREP_COLOR=7 to highlight whitespace on black terminals
+# LANG=C for speed. See also: http://www.pixelbeat.org/scripts/findrepo
+alias grep='GREP_COLOR="1;33;40" LANG=C grep --color=auto'
