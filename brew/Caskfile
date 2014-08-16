@@ -1,5 +1,7 @@
 install caskroom/cask/brew-cask
 
+tap mohitpandey/homebrew-cask
+
 cask install diffmerge
 cask install intellij-idea
 cask install iterm2
