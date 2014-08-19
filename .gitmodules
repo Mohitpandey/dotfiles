@@ -4,3 +4,6 @@
 [submodule ".oh-my-zsh.symlink"]
 	path = .oh-my-zsh.symlink
 	url = git@github.com:Mohitpandey/oh-my-zsh.git
+[submodule ".iterm"]
+	path = .iterm
+	url = git@github.com:Mohitpandey/iTerm2-Color-Schemes.git
