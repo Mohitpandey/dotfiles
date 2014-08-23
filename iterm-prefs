@@ -1247,8 +1247,6 @@
 			<true/>
 			<key>Window Type</key>
 			<integer>0</integer>
-			<key>Working Directory</key>
-			<string>/Users/mpandey</string>
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
@@ -1297,7 +1295,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/mpandey/Documents</string>
+	<string>https://github.com/mohitpandey/dotfiles/edit/master/iterm-prefs</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
