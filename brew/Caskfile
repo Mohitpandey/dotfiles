@@ -12,7 +12,6 @@ cask install android-studio-bundle
 cask install alfred
 cask install genymotion
 
-tap caskroom/fonts
+tap mohitpandey/fonts
 
-cask install font-sauce-code-powerline
-cask install font-anonymous-pro
+cask install font-anonymous-pro-for-powerline
