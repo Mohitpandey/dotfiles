@@ -5,12 +5,20 @@ export HOMEBREW="$DOTFILES/homebrew"
 
 xcode-select --install
 
-mkdir -p $HOMEBREW && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C $HOMEBREW
-
 git clone https://github.com/Mohitpandey/dotfiles.git $DOTFILES
 
-export $PATH="$HOMEBREW/bin:$PATH"
+mkdir -p $HOMEBREW && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C $HOMEBREW
+mkdir -p ~/Applications
 
-#ln -s $DOTFILES/.oh-my-zsh.symlink $HOME/.oh-my-zsh
-#ln -s $DOTFILES/.zshrc.symlink $HOME/.zshrc
-#ln -s $DOTFILES/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+export PATH="$HOMEBREW/bin:$PATH"
+# TODO: move the following to .zshenv
+export HOMEBREW_CASK_OPTS="--caskroom=~/Applications --binarydir=$HOMEBREW/bin"
+
+cd $DOTFILES
+
+brew bundle  brew/Brewfile
+brew bundle brew/Caskfile
+
+ln -s $DOTFILES/.oh-my-zsh.symlink $HOME/.oh-my-zsh
+ln -s $DOTFILES/.zshrc.symlink $HOME/.zshrc
+ln -s $DOTFILES/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
