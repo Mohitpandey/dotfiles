@@ -35,27 +35,32 @@ class Util:
 	def mkdir(path):
 		if not os.path.exists(path):
 			os.makedirs(path)
-    		printout("Created: " + path, YELLOW) 
 	
-	# @staticmethod
-	# def run(cmd):
-	# 	process = subprocess.Popen(cmd,stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
-	# 	out, err = process.communicate()
-	# 	if not err:
-	# 		printout(out,BLUE)
-	# 	else:
-	# 		printout(err,RED)
-	# 		exit()
-
 	@staticmethod
 	def run(cmd):
-		printout("Running: "+cmd,MAGENTA)
-		try:
-			out = subprocess.check_output(cmd,shell=True,stderr=subprocess.STDOUT)
-			printout(out,BLUE)
-		except subprocess.CalledProcessError as e:	
-			printout(e.output,RED)
-			sys.exit()
+			process = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True,bufsize=0)
+			for line in iter(process.stdout.readline, ''):
+				print line.rstrip()
+			process.stdout.close()
+			err = 0			
+			for line in iter(process.stderr.readline, ''):
+				printout(line.rstrip(),RED)
+				err = 1
+			process.stderr.close()
+			if err:
+				sys.exit()
+			
+			
+
+	# @staticmethod
+	# def run(cmd):
+	# 	printout("Running: "+cmd,MAGENTA)
+	# 	try:
+	# 		out = subprocess.check_output(cmd,shell=True,stderr=subprocess.STDOUT)
+	# 		printout(out,BLUE)
+	# 	except subprocess.CalledProcessError as e:	
+	# 		printout(e.output,RED)
+	# 		sys.exit()
 
 
 
@@ -69,7 +74,7 @@ Util.mkdir(CASK_APPS)
 
 print "Setting up your MAC now...."
 
-clone_repo = "git clone --progress https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
+clone_repo = "git clone --progress shttps://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
 Util.run(clone_repo)
 
 printout("Current working dir: "+os.getcwd(),GREEN)
