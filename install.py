@@ -50,12 +50,35 @@ class Util:
 	# 		if err:
 	# 			sys.exit()
 
+	# We want to show progress to the user. If
+	# we run brew cmd from python, the output
+	# will take time to show up since there might
+	# be lot of formulas. While trying to stream,
+	# I ran into problem with differentiating error
+	# and normal output. Since I wasn to show errors in
+	# error and capture attention, I took this route.
+	# If there is a better way, please let me know.
 	@staticmethod
-	def brewer(formula):
+	def brewer(formula):		
 		if formula and not formula.startswith('#'):
-			Util.run("brew {brew}".format(**locals()))		
+			Util.run("brew {formula}".format(**locals()))		
 		
-			
+		
+	@staticmethod
+	def install_formulas(formulas):
+		for formula in formulas:
+			Util.brewer(formula)
+
+	@staticmethod
+	def handle_brewfiles(brew_file_location):
+		brew_files = os.listdir(brew_file_location)
+		for file in brew_files:
+			Util.install_formulas(Util.get_file_lines(brew_file_location+"/"+file))
+
+	@staticmethod
+	def get_file_lines(file):
+		return [line.strip() for line in open(file)]
+
 	@staticmethod
 	def run(cmd):
 		printout("Running: "+cmd,MAGENTA)
@@ -66,6 +89,20 @@ class Util:
 			printout(e.output,RED)
 			sys.exit()
 
+	@staticmethod
+	def symlink(dir,target):
+		files = os.listdir(dir)
+		if(len(files)):
+			printout("Symlinking:",MAGENTA)
+		for file in files:
+			if file.endswith(".symlink"):
+				source_file = "{dir}/{file}".format(**locals())
+				target_file = target + "/" + file.replace(".symlink","")
+				
+				print "\t{source_file} → {target_file}".format(**locals())				
+				os.symlink(dir+"/"+file,target_file)
+
+
 
 
 # TODO: Make sure all directories exist
@@ -75,6 +112,7 @@ DOTFILES = HOME + "/dotfiles"
 HOMEBREW = HOME + "/homebrew"
 CASK_APPS = HOME + "/cask/Applications"
 Util.mkdir(CASK_APPS)
+Util.mkdir(HOME+"/links")
 
 print "Setting up your MAC now...."
 
@@ -89,14 +127,17 @@ printout("Current working dir: "+os.getcwd(),GREEN)
 os.environ["HOMEBREW_CASK_OPTS"] = "--caskroom={CASK_APPS} --binarydir={HOMEBREW}/bin".format(**locals())
 
 install_homebrew = "mkdir -p {HOMEBREW} && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {HOMEBREW}".format(**locals())
-Util.run(install_homebrew)
+#Util.run(install_homebrew)
 
 os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 
-formulas = [line.strip() for line in open("{DOTFILES}/brew/Brewfile".format(**locals()))]
-print formulas
-for formula in formulas:
-	Util.brewer(formula)
+# formulas = [line.strip() for line in open("{DOTFILES}/brew/Brewfile".format(**locals()))]
+# for formula in formulas:
+# 	Util.brewer(formula)
+
+# Util.handle_brewfiles(DOTFILES + "/brew")
+
+Util.symlink(DOTFILES,HOME+"/links")
 
 # brew_bundler = "brew bundle {DOTFILES}/brew/Brewfile".format(**locals())
 # Util.run(brew_bundler)
