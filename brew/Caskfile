@@ -4,6 +4,10 @@ tap mohitpandey/homebrew-cask
 
 cask install diffmerge
 
+untap mohitpandey/homebrew-cask
+
 tap mohitpandey/fonts
 
 cask install font-anonymous-pro-for-powerline
+
+untap mohitpandey/fonts
