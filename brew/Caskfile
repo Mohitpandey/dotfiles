@@ -1,6 +1,7 @@
 install caskroom/cask/brew-cask
 
 cask install iterm2
+cask install alfred
 
 #cask install diffmerge
 #cask install android-studio-bundle
@@ -8,3 +9,5 @@ cask install iterm2
 tap mohitpandey/fonts
 cask install font-anonymous-pro-for-powerline
 untap mohitpandey/fonts
+
+cask alfred
