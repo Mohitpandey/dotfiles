@@ -1,8 +1,3 @@
-update
-
 install vim
-install ag
-install sbt
-install git-flow
 
 cleanup

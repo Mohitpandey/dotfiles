@@ -3,14 +3,6 @@ install caskroom/cask/brew-cask
 tap mohitpandey/homebrew-cask
 
 cask install diffmerge
-cask install intellij-idea
-cask install iterm2
-cask install sublime-text
-cask install virtualbox
-cask install vlc
-cask install android-studio-bundle
-cask install alfred
-cask install genymotion
 
 tap mohitpandey/fonts
 

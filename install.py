@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import sys
 import os
@@ -35,37 +36,62 @@ class Util:
 		if not os.path.exists(path):
 			os.makedirs(path)
     		printout("Created: " + path, YELLOW) 
+	
+	# @staticmethod
+	# def run(cmd):
+	# 	process = subprocess.Popen(cmd,stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
+	# 	out, err = process.communicate()
+	# 	if not err:
+	# 		printout(out,BLUE)
+	# 	else:
+	# 		printout(err,RED)
+	# 		exit()
+
+	@staticmethod
+	def run(cmd):
+		printout("Running: "+cmd,MAGENTA)
+		try:
+			out = subprocess.check_output(cmd,shell=True,stderr=subprocess.STDOUT)
+			printout(out,BLUE)
+		except subprocess.CalledProcessError as e:	
+			printout(e.output,RED)
+			sys.exit()
+
+
 
 # TODO: Make sure all directories exist
 
 HOME = os.environ['HOME'] + "/TEST"
 DOTFILES = HOME + "/dotfiles"
-HOMEBREW = DOTFILES + "/homebrew"
+HOMEBREW = HOME + "/homebrew"
+CASK_APPS = HOME + "/cask/Applications"
+Util.mkdir(CASK_APPS)
 
-# Util.mkdir(DOT)
+print "Setting up your MAC now...."
 
-printout("Initiating your MAC setup...", CYAN)
-printout("Cloing your dotfile REPO", CYAN)
-
-clone_repo = ["git", "clone", "--progress", "https://github.com/Mohitpandey/dotfiles.git",DOTFILES]
-print subprocess.call(clone_repo)
-
-printout("HOME : " + HOME,GREEN)
-printout("DOTFILES : " + DOTFILES,GREEN)
-
-
+clone_repo = "git clone --progress https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
+Util.run(clone_repo)
 
 printout("Current working dir: "+os.getcwd(),GREEN)
 printout("Changin to dotfiles dir",YELLOW)
 os.chdir(DOTFILES)
 printout("Current working dir: "+os.getcwd(),GREEN)
 
-install_homebrew = "mkdir -p {homebrew} && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {homebrew}".format(homebrew=HOMEBREW)
-process = subprocess.Popen(install_homebrew,stdout=subprocess.PIPE, stderr=subprocess.STDOUT,shell=True)
-install_homebrew_output, err = process.communicate()
+os.environ["HOMEBREW_CASK_OPTS"] = "--caskroom={CASK_APPS} --binarydir={HOMEBREW}/bin".format(**locals())
 
-printout(install_homebrew_output,BLUE)
-   
+install_homebrew = "mkdir -p {HOMEBREW} && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {HOMEBREW}".format(**locals())
+Util.run(install_homebrew)
+
+os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
+
+
+brew_bundler = "brew bundle {DOTFILES}/brew/Brewfile".format(**locals())
+Util.run(brew_bundler)
+
+cask_bundler = "brew bundle {DOTFILES}/brew/Caskfile".format(**locals())
+Util.run(cask_bundler)   
+
+
 
 # export DOTFILES="$HOME/test/.dotfiles"
 # export HOMEBREW="$DOTFILES/homebrew"
