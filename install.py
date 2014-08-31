@@ -36,31 +36,35 @@ class Util:
 		if not os.path.exists(path):
 			os.makedirs(path)
 	
-	@staticmethod
-	def run(cmd):
-			process = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True,bufsize=0)
-			for line in iter(process.stdout.readline, ''):
-				print line.rstrip()
-			process.stdout.close()
-			err = 0			
-			for line in iter(process.stderr.readline, ''):
-				printout(line.rstrip(),RED)
-				err = 1
-			process.stderr.close()
-			if err:
-				sys.exit()
-			
-			
-
 	# @staticmethod
 	# def run(cmd):
-	# 	printout("Running: "+cmd,MAGENTA)
-	# 	try:
-	# 		out = subprocess.check_output(cmd,shell=True,stderr=subprocess.STDOUT)
-	# 		printout(out,BLUE)
-	# 	except subprocess.CalledProcessError as e:	
-	# 		printout(e.output,RED)
-	# 		sys.exit()
+	# 		process = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True,bufsize=0)
+	# 		for line in iter(process.stdout.readline, ''):
+	# 			print line.rstrip()
+	# 		process.stdout.close()
+	# 		err = 0			
+	# 		for line in iter(process.stderr.readline, ''):
+	# 			printout(line.rstrip(),RED)
+	# 			err = 1
+	# 		process.stderr.close()
+	# 		if err:
+	# 			sys.exit()
+
+	@staticmethod
+	def brewer(formula):
+		if formula and not formula.startswith('#'):
+			Util.run("brew {brew}".format(**locals()))		
+		
+			
+	@staticmethod
+	def run(cmd):
+		printout("Running: "+cmd,MAGENTA)
+		try:
+			out = subprocess.check_output(cmd,shell=True,stderr=subprocess.STDOUT)
+			print out
+		except subprocess.CalledProcessError as e:	
+			printout(e.output,RED)
+			sys.exit()
 
 
 
@@ -74,7 +78,7 @@ Util.mkdir(CASK_APPS)
 
 print "Setting up your MAC now...."
 
-clone_repo = "git clone --progress shttps://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
+clone_repo = "git clone --progress https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
 Util.run(clone_repo)
 
 printout("Current working dir: "+os.getcwd(),GREEN)
@@ -89,12 +93,16 @@ Util.run(install_homebrew)
 
 os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 
+formulas = [line.strip() for line in open("{DOTFILES}/brew/Brewfile".format(**locals()))]
+print formulas
+for formula in formulas:
+	Util.brewer(formula)
 
-brew_bundler = "brew bundle {DOTFILES}/brew/Brewfile".format(**locals())
-Util.run(brew_bundler)
+# brew_bundler = "brew bundle {DOTFILES}/brew/Brewfile".format(**locals())
+# Util.run(brew_bundler)
 
-cask_bundler = "brew bundle {DOTFILES}/brew/Caskfile".format(**locals())
-Util.run(cask_bundler)   
+# cask_bundler = "brew bundle {DOTFILES}/brew/Caskfile".format(**locals())
+# Util.run(cask_bundler)   
 
 
 

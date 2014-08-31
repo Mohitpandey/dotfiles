@@ -1,3 +1,5 @@
 install vim
 
+# clean up after installation
+
 cleanup
