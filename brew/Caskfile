@@ -1,13 +1,10 @@
 install caskroom/cask/brew-cask
 
-tap mohitpandey/homebrew-cask
+cask install iterm2
 
-cask install diffmerge
-
-untap mohitpandey/homebrew-cask
+#cask install diffmerge
+#cask install android-studio-bundle
 
 tap mohitpandey/fonts
-
 cask install font-anonymous-pro-for-powerline
-
 untap mohitpandey/fonts

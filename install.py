@@ -35,20 +35,6 @@ class Util:
 	def mkdir(path):
 		if not os.path.exists(path):
 			os.makedirs(path)
-	
-	# @staticmethod
-	# def run(cmd):
-	# 		process = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True,bufsize=0)
-	# 		for line in iter(process.stdout.readline, ''):
-	# 			print line.rstrip()
-	# 		process.stdout.close()
-	# 		err = 0			
-	# 		for line in iter(process.stderr.readline, ''):
-	# 			printout(line.rstrip(),RED)
-	# 			err = 1
-	# 		process.stderr.close()
-	# 		if err:
-	# 			sys.exit()
 
 	# We want to show progress to the user. If
 	# we run brew cmd from python, the output
@@ -131,43 +117,12 @@ install_homebrew = "mkdir -p {HOMEBREW} && curl -L https://github.com/Homebrew/h
 
 os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 
-# formulas = [line.strip() for line in open("{DOTFILES}/brew/Brewfile".format(**locals()))]
-# for formula in formulas:
-# 	Util.brewer(formula)
 
 # Util.handle_brewfiles(DOTFILES + "/brew")
 
 Util.symlink(DOTFILES,HOME+"/links")
 
-# brew_bundler = "brew bundle {DOTFILES}/brew/Brewfile".format(**locals())
-# Util.run(brew_bundler)
-
-# cask_bundler = "brew bundle {DOTFILES}/brew/Caskfile".format(**locals())
-# Util.run(cask_bundler)   
-
-
-
-# export DOTFILES="$HOME/test/.dotfiles"
-# export HOMEBREW="$DOTFILES/homebrew"
-
 # xcode-select --install
-
-# git clone https://github.com/Mohitpandey/dotfiles.git $DOTFILES
-
-# mkdir -p $HOMEBREW && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C $HOMEBREW
-# mkdir -p ~/Applications
-
-# export PATH="$HOMEBREW/bin:$PATH"
 
 # # TODO: move the following to .zshenv
 # export HOMEBREW_CASK_OPTS="--caskroom=~/Applications --binarydir=$HOMEBREW/bin"
-
-# cd $DOTFILES
-
-# brew bundle brew/Brewfile
-# brew bundle brew/Caskfile
-
-# ln -s $DOTFILES/.oh-my-zsh.symlink $HOME/.oh-my-zsh
-# ln -s $DOTFILES/.zshrc.symlink $HOME/.zshrc
-# ln -s $DOTFILES/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-# ln -s $DOTFILES/.vim.symlink $HOME/.vim
