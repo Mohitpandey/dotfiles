@@ -165,3 +165,7 @@ defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 # Terminals
 
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# EXEC
+killall Finder
+killall Dock

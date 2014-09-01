@@ -8,5 +8,5 @@ export HISTFILESIZE=1000000
 export PATH=$HOME/bin:$PATH
 
 #FIXME: this should not be harcoded here
-export HOMEBREW_CASK_OPTS = "--caskroom=~/developer/casks --binarydir=~/bin"
+export HOMEBREW_CASK_OPTS="--caskroom=$HOME/developer/casks --binarydir=$HOME/bin"
 
