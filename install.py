@@ -83,10 +83,10 @@ class Util:
 		for file in files:
 			if file.endswith(".symlink"):
 				source_file = "{dir}/{file}".format(**locals())
-				target_file = target + "/" + file.replace(".symlink","")
-				
+				target_file = target + "/" + file.replace(".symlink","")				
 				print "\t{source_file} → {target_file}".format(**locals())				
-				os.symlink(dir+"/"+file,target_file)
+				os.symlink(source_file,target_file)
+
 
 
 
@@ -101,7 +101,7 @@ Util.mkdir(CASK_APPS)
 
 print "Setting up your MAC now...."
 
-clone_repo = "git clone --progress https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
+clone_repo = "git clone --recursive https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
 Util.run(clone_repo)
 
 os.environ["HOMEBREW_CASK_OPTS"] = "--caskroom={CASK_APPS} --binarydir={HOMEBREW}/bin".format(**locals())
@@ -116,7 +116,7 @@ Util.handle_brewfiles(DOTFILES + "/brew")
 
 Util.symlink(DOTFILES,HOME)
 
-Util.symlink(DOTFILES+"/Preferences","~/Library/Preferences/")
+Util.symlink(DOTFILES+"/Preferences",HOME+"/Library/Preferences")
 
 
 
