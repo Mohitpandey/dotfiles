@@ -12,6 +12,7 @@ alias gf="git-flow"
 alias au="adb uninstall com.nytimes.android"
 alias showHidden='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'
 alias hideHidden='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'
+alias ql='qlmanage -p 2>/dev/null'
 
 # GREP_COLOR=bright yellow on black bg.
 # use GREP_COLOR=7 to highlight whitespace on black terminals

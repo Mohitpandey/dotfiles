@@ -24,6 +24,8 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
+# defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+
 # ------------------------------- #
 # Keyboard, Mouse/Trackpad setup
 # ------------------------------- #

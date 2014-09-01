@@ -30,5 +30,10 @@ plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Source in all files that end with .src
+
+for file in `find . -name "*.src" -maxdepth 1` ; do
+  source "$file"
+done

@@ -1,0 +1,8 @@
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+
+#export ANDROID_HOME=$DEVELOPMENT/Frameworks/Android/sdk
+#export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+#export ANDROID_TOOLS=$ANDROID_HOME/tools
+
+export PATH=$HOME/bin:$PATH

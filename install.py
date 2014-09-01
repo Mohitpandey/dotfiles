@@ -93,25 +93,26 @@ class Util:
 		Util.run("source {file}".format(**locals()))
 
 
-
-
-# TODO: Make sure all directories exist
-
-HOME = os.environ['HOME']
-DOTFILES = HOME + "/TEST/dotfiles"
-HOMEBREW = HOME + "/TEST/homebrew"
-CASK_APPS = HOME + "/TEST/cask/Applications"
-Util.mkdir(CASK_APPS)
+# Just this makes it annoying having install script written in pythong
+# Though there are easy workarounds.
+HOME     = os.environ['HOME']
+DEV      = "developer"
+DOTFILES = "{HOME}/{DEV}/dotfiles".format(**locals)()) # created by clone    
+HOMEBREW = "{HOME}/{DEV}/homebrew".format(**locals)()) # created by brew
+CASKS    = "{HOME}/{DEV}/casks".format(**locals)())
+Util.mkdir(CASKS)
 
 print "Setting up your MAC now...."
 
 clone_repo = "git clone --recursive https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
 Util.run(clone_repo)
 
-os.environ["HOMEBREW_CASK_OPTS"] = "--caskroom={CASK_APPS} --binarydir={HOMEBREW}/bin".format(**locals())
+os.environ["HOMEBREW_CASK_OPTS"] = "--caskroom={CASKS} --binarydir={HOMEBREW}/bin".format(**locals())
 
-install_homebrew = "mkdir -p {HOMEBREW} && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {HOMEBREW}".format(**locals())
+install_homebrew = """mkdir -p {HOMEBREW} && curl -L https://github.com/Homebrew/homebrew/tarball/master \
+ 				   | tar xz --strip 1 -C {HOMEBREW}""".format(**locals())
 Util.run(install_homebrew)
+os.symlink(HOMEBREW+"/bin",HOME+"/bin")
 
 os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 
@@ -124,6 +125,11 @@ Util.symlink(DOTFILES+"/Preferences",HOME+"/Library/Preferences")
 
 # Setup all OSX defaults
 Util.sourcer(DOTFILES + "/.osx")
+
+SUBLIME_SUPP = "{HOME}/Library/Application Support/Sublime Text 3".format(**locals())
+Util.symlink(DOTFILES+"/sublime_init/Package Control.sublime-package",SUBLIME_SUPP+"/Installed Packages/")
+Util.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUPP+"/Packages/User/")
+Util.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/")
 
 # xcode-select --install
 

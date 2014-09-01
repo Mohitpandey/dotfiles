@@ -1,0 +1,15 @@
+{
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/Tomorrow-Night (SL).tmTheme",
+	"font_face": "Anonymous Pro",
+	"font_size": 14,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"word_wrap": true
+}
