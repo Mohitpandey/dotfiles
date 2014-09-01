@@ -2,6 +2,7 @@ install caskroom/cask/brew-cask
 
 cask install iterm2
 cask install alfred
+cask install sublime-text
 
 #cask install diffmerge
 #cask install android-studio-bundle
