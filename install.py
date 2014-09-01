@@ -97,9 +97,9 @@ class Util:
 # Though there are easy workarounds.
 HOME     = os.environ['HOME']
 DEV      = "developer"
-DOTFILES = "{HOME}/{DEV}/dotfiles".format(**locals)()) # created by clone    
-HOMEBREW = "{HOME}/{DEV}/homebrew".format(**locals)()) # created by brew
-CASKS    = "{HOME}/{DEV}/casks".format(**locals)())
+DOTFILES = "{HOME}/{DEV}/dotfiles".format(**locals()) # created by clone    
+HOMEBREW = "{HOME}/{DEV}/homebrew".format(**locals()) # created by brew
+CASKS    = "{HOME}/{DEV}/casks".format(**locals())
 Util.mkdir(CASKS)
 
 print "Setting up your MAC now...."
