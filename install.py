@@ -105,22 +105,20 @@ print "Setting up your MAC now...."
 clone_repo = "git clone --progress https://github.com/Mohitpandey/dotfiles.git {DOTFILES}".format(**locals())
 Util.run(clone_repo)
 
-printout("Current working dir: "+os.getcwd(),GREEN)
-printout("Changin to dotfiles dir",YELLOW)
-os.chdir(DOTFILES)
-printout("Current working dir: "+os.getcwd(),GREEN)
-
 os.environ["HOMEBREW_CASK_OPTS"] = "--caskroom={CASK_APPS} --binarydir={HOMEBREW}/bin".format(**locals())
 
 install_homebrew = "mkdir -p {HOMEBREW} && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {HOMEBREW}".format(**locals())
-#Util.run(install_homebrew)
+Util.run(install_homebrew)
 
 os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 
-
-# Util.handle_brewfiles(DOTFILES + "/brew")
+# Install Brew formulas 
+Util.handle_brewfiles(DOTFILES + "/brew")
 
 Util.symlink(DOTFILES,HOME+"/links")
+
+Util.symlink(HOME+"/Preferences","~/Library/Preferences/")
+
 
 # xcode-select --install
 
