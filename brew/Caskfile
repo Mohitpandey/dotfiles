@@ -2,10 +2,12 @@ install caskroom/cask/brew-cask
 
 cask install iterm2
 cask install alfred
-cask install sublime-text
-
 #cask install diffmerge
 #cask install android-studio-bundle
+
+tap caskroom/versions
+cask install sublime-text3
+untap caskroom/versions
 
 tap mohitpandey/fonts
 cask install font-anonymous-pro-for-powerline

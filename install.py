@@ -127,9 +127,13 @@ Util.symlink(DOTFILES+"/Preferences",HOME+"/Library/Preferences")
 Util.sourcer(DOTFILES + "/.osx")
 
 SUBLIME_SUPP = "{HOME}/Library/Application Support/Sublime Text 3".format(**locals())
-Util.symlink(DOTFILES+"/sublime_init/Package Control.sublime-package",SUBLIME_SUPP+"/Installed Packages/")
-Util.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUPP+"/Packages/User/")
-Util.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/")
+# TODO: clean up
+
+Util.mkdir(SUBLIME_SUPP+"/Installed Packages")
+Util.mkdir(SUBLIME_SUPP+"/Packages/User")
+os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-package",SUBLIME_SUPP+"/Installed Packages/Package Control.sublime-package")
+os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUPP+"/Packages/User/Package Control.sublime-settings")
+os.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/Preferences.sublime-settings")
 
 # xcode-select --install
 
