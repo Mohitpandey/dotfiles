@@ -88,6 +88,10 @@ class Util:
 				os.symlink(source_file,target_file)
 
 
+	@staticmethod
+	def sourcer(file):
+		Util.run("source {file}".format(**locals()))
+
 
 
 
@@ -118,7 +122,8 @@ Util.symlink(DOTFILES,HOME)
 
 Util.symlink(DOTFILES+"/Preferences",HOME+"/Library/Preferences")
 
-
+# Setup all OSX defaults
+Util.sourcer(DOTFILES + "/.osx")
 
 # xcode-select --install
 
