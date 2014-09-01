@@ -93,12 +93,11 @@ class Util:
 
 # TODO: Make sure all directories exist
 
-HOME = os.environ['HOME'] + "/TEST"
-DOTFILES = HOME + "/dotfiles"
-HOMEBREW = HOME + "/homebrew"
-CASK_APPS = HOME + "/cask/Applications"
+HOME = os.environ['HOME']
+DOTFILES = HOME + "/TEST/dotfiles"
+HOMEBREW = HOME + "/TEST/homebrew"
+CASK_APPS = HOME + "/TEST/cask/Applications"
 Util.mkdir(CASK_APPS)
-Util.mkdir(HOME+"/links")
 
 print "Setting up your MAC now...."
 
@@ -115,9 +114,10 @@ os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 # Install Brew formulas 
 Util.handle_brewfiles(DOTFILES + "/brew")
 
-Util.symlink(DOTFILES,HOME+"/links")
+Util.symlink(DOTFILES,HOME)
 
-Util.symlink(HOME+"/Preferences","~/Library/Preferences/")
+Util.symlink(DOTFILES+"/Preferences","~/Library/Preferences/")
+
 
 
 # xcode-select --install
