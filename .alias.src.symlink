@@ -11,6 +11,7 @@ alias aks="adb kill-server"
 alias gf="git-flow"
 alias au="adb uninstall com.nytimes.android"
 alias showHidden='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'
+alias vi='vim'
 alias hideHidden='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'
 alias ql='qlmanage -p 2>/dev/null'
 

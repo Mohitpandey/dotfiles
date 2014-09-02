@@ -1,14 +1,17 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle.vim/
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ervandew/supertab'
-Bundle 'bling/vim-airline'
+call vundle#begin()
+
+Plugin 'ervandew/supertab'
+Plugin 'bling/vim-airline'
+
+call vundle#end()
+filetype plugin indent on
 
 syntax on
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme Tomorrow-Night-Eighties

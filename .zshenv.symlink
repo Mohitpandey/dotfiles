@@ -10,3 +10,5 @@ export PATH=$HOME/bin:$PATH
 #FIXME: this should not be harcoded here
 export HOMEBREW_CASK_OPTS="--caskroom=$HOME/developer/casks --binarydir=$HOME/bin"
 
+#FIXME: this needs to change
+export CDPATH="~/Developer/workspace/":$CDPATH

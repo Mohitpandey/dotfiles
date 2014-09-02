@@ -4,3 +4,7 @@
 [submodule ".iterm"]
 	path = .iterm
 	url = https://github.com/Mohitpandey/iTerm2-Color-Schemes.git
+[submodule ".vim/bundle/vundle.vim"]
+	path = .vim/bundle/vundle.vim
+	url = https://github.com/gmarik/Vundle.vim.git
+	branch = origin/v0.10.2

@@ -136,6 +136,8 @@ os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUP
 os.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/Preferences.sublime-settings")
 os.symlink(DOTFILES+"/sublime_init/Tomorrow-Night-Eighties.tmTheme",SUBLIME_SUPP+"/Packages/User/Tomorrow-Night-Eighties.tmTheme")
 
+Util.run(HOME+"/bin/vim +PluginInstall +qall")
+
 # xcode-select --install
 
 # # TODO: move the following to .zshenv
