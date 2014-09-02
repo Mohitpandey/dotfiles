@@ -134,6 +134,7 @@ Util.mkdir(SUBLIME_SUPP+"/Packages/User")
 os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-package",SUBLIME_SUPP+"/Installed Packages/Package Control.sublime-package")
 os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUPP+"/Packages/User/Package Control.sublime-settings")
 os.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/Preferences.sublime-settings")
+os.symlink(DOTFILES+"/sublime_init/Tomorrow-Night-Eighties.tmTheme",SUBLIME_SUPP+"/Packages/User/Tomorrow-Night-Eighties.tmTheme")
 
 # xcode-select --install
 

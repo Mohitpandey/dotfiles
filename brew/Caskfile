@@ -11,6 +11,7 @@ untap caskroom/versions
 
 tap mohitpandey/fonts
 cask install font-anonymous-pro-for-powerline
+cask install font-anonymous-pro
 untap mohitpandey/fonts
 
 cask alfred
