@@ -1,5 +1,6 @@
 install vim
-
+install ctags
+install alfred
 # clean up after installation
 
 cleanup

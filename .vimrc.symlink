@@ -7,11 +7,34 @@ call vundle#begin()
 
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'mbbill/undotree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax on
 set background=dark
-let g:solarized_termcolors=256
 colorscheme Tomorrow-Night-Eighties
+set nu
+
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    set undofile
+endif
+
+filetype on
+"set omnifunc=syntaxcomplete#Complete
+
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
+" Airline config
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+
+nnoremap <C-U> :UndotreeToggle<cr>

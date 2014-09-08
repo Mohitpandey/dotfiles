@@ -22,7 +22,6 @@ def has_colours(stream):
         return False
 has_colours = has_colours(sys.stdout)
 
-
 def printout(text, colour=WHITE):
         if has_colours:
                 seq = "\x1b[1;%dm" % (30+colour) + text + "\x1b[0m" + "\n"
@@ -135,9 +134,9 @@ os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-package",SUBLIME_SUPP
 os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUPP+"/Packages/User/Package Control.sublime-settings")
 os.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/Preferences.sublime-settings")
 os.symlink(DOTFILES+"/sublime_init/Tomorrow-Night-Eighties.tmTheme",SUBLIME_SUPP+"/Packages/User/Tomorrow-Night-Eighties.tmTheme")
-
+# 
 Util.run(HOME+"/bin/vim +PluginInstall +qall")
-
+Util.run(HOME+"/.vim/bundle/YouCompleteMe/install.sh")
 # xcode-select --install
 
 # # TODO: move the following to .zshenv
