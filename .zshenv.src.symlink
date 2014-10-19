@@ -1,0 +1,11 @@
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export DEV="$HOME/developer"
+export ANDROID_HOME="$DEV/casks/android-studio-bundle/0.8.6 build-135.1339820/Android Studio.app/sdk"
+export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+export ANDROID_TOOLS=$ANDROID_HOME/tools
+export PATH=$HOME/bin:$PATH
+#FIXME: this should not be harcoded here
+export HOMEBREW_CASK_OPTS="--caskroom=$DEV/casks --binarydir=$HOME/bin"
+#FIXME: this needs to change
+export CDPATH="$DEV/workspace/":$CDPATH

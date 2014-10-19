@@ -1,10 +1,10 @@
 alias cls='clear'
 alias u='cd ..'
-alias src='source ~/.bashrc'
-alias vib='subl ~/.bashrc'
+alias src='source ~/.zshrc'
+alias vib='subl ~/.zshrc'
 alias l='ls -G -ltr'
 alias la='ls -G -lat'
-alias ws="cd $DEVELOPMENT/workspace"
+alias ws="cd $DEV/workspace"
 alias and="android"
 alias ass="adb start-server"
 alias aks="adb kill-server"
