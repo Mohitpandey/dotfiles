@@ -1,6 +1,9 @@
 install vim
 install ctags
-install alfred
+install pidcat
+install ag
+install gpg
+
 # clean up after installation
 
 cleanup
