@@ -8,6 +8,7 @@ cask install vlc
 cask install android-studio-bundle
 cask install alfred
 cask install genymotion
+cask install spotify
 
 tap caskroom/versions
 cask install sublime-text3
