@@ -1,11 +1,17 @@
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 export DEV="$HOME/developer"
-export ANDROID_HOME="$DEV/casks/android-studio-bundle/0.8.6 build-135.1339820/Android Studio.app/sdk"
+export ANDROID_HOME="$DEV/android/sdk"
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+export ANDROID_BUILD_TOOLS="$ANDROID_HOME/build-tools/21.0.1"
 export ANDROID_TOOLS=$ANDROID_HOME/tools
-export PATH=$HOME/bin:$PATH
+export PATH=$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$HOME/bin:$DEV/homebrew/opt/gnu-tar/libexec/gnubin:$PATH
 #FIXME: this should not be harcoded here
 export HOMEBREW_CASK_OPTS="--caskroom=$DEV/casks --binarydir=$HOME/bin"
 #FIXME: this needs to change
 export CDPATH="$DEV/workspace/":$CDPATH
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk"
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1

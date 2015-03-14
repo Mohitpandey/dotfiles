@@ -1,10 +1,11 @@
 alias cls='clear'
 alias u='cd ..'
+alias oa='open /Applications/Android\ Studio.app'
 alias src='source ~/.zshrc'
 alias vib='subl ~/.zshrc'
 alias l='ls -G -ltr'
 alias la='ls -G -lat'
-alias ws="cd $DEV/workspace"
+alias ws="cd $HOME/developer/workspace"
 alias and="android"
 alias ass="adb start-server"
 alias aks="adb kill-server"

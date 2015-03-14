@@ -40,7 +40,7 @@
 	untracked = cyan
 [push]
 
-	default = matching
+	default = simple
 
 [core]
 	excludesfile = /Users/mpandey/.gitignore_global
@@ -50,3 +50,15 @@
 [mergetool "sourcetree"]
 	cmd = /Users/mpandey/developer/casks/sourcetree/2.0.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[user]
+	name = Mohit Pandey
+	email = mohitpandey.all@gmail.com
