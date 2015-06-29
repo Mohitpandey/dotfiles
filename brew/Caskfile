@@ -5,7 +5,7 @@ cask install intellij-idea
 cask install iterm2
 cask install virtualbox
 cask install vlc
-cask install android-studio-bundle
+cask install android-studio
 cask install alfred
 cask install genymotion
 cask install spotify
