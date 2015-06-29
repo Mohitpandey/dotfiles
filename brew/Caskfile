@@ -13,6 +13,7 @@ tap caskroom/versions
 cask install sublime-text3
 untap caskroom/versions
 
+brew tap caskroom/fonts 
 cask install font-anonymous-pro-for-powerline
 cask install font-anonymous-pro
-
+brew untap caskroom/fonts 
