@@ -6,7 +6,6 @@ cask install iterm2
 cask install virtualbox
 cask install vlc
 cask install android-studio
-cask install alfred
 cask install genymotion
 cask install spotify
 
@@ -14,9 +13,6 @@ tap caskroom/versions
 cask install sublime-text3
 untap caskroom/versions
 
-tap mohitpandey/fonts
 cask install font-anonymous-pro-for-powerline
 cask install font-anonymous-pro
-untap mohitpandey/fonts
 
-cask alfred
