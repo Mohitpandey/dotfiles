@@ -3,11 +3,8 @@ install caskroom/cask/brew-cask
 cask install diffmerge
 cask install intellij-idea
 cask install iterm2
-cask install virtualbox
 cask install vlc
 cask install android-studio
-cask install genymotion
-cask install spotify
 
 tap caskroom/versions
 cask install sublime-text3
