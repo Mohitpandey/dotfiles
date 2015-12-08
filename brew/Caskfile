@@ -1,13 +1,11 @@
 install caskroom/cask/brew-cask
 
 cask install diffmerge
-cask install intellij-idea
-cask install iterm2
-cask install vlc
 cask install android-studio
+cask install atom
 
 tap caskroom/versions
-cask install sublime-text3
+cask install iterm2-beta
 untap caskroom/versions
 
 tap caskroom/fonts 
