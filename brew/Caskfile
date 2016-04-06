@@ -1,12 +1,8 @@
 install caskroom/cask/brew-cask
 
 cask install diffmerge
-cask install android-studio
 cask install atom
-
-tap caskroom/versions
-cask install iterm2-beta
-untap caskroom/versions
+cask install iterm2
 
 tap caskroom/fonts 
 cask install font-anonymous-pro-for-powerline
