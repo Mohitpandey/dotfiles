@@ -1,6 +1,5 @@
 install vim
 install ctags
-install pidcat
 install ag
 install gpg
 install cmake
