@@ -1,12 +1,4 @@
-
 update
-
+install zplug
 install vim
-install ctags
-install ag
-install gpg
-install cmake
-
-# clean up after installation
-
 cleanup

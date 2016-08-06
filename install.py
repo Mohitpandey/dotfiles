@@ -44,11 +44,11 @@ class Util:
 	# error and capture attention, I took this route.
 	# If there is a better way, please let me know.
 	@staticmethod
-	def brewer(formula):		
+	def brewer(formula):
 		if formula and not formula.startswith('#'):
-			Util.run("brew {formula}".format(**locals()))		
-		
-		
+			Util.run("brew {formula}".format(**locals()))
+
+
 	@staticmethod
 	def install_formulas(formulas):
 		for formula in formulas:
@@ -70,7 +70,7 @@ class Util:
 		try:
 			out = subprocess.check_output(cmd,shell=True,stderr=subprocess.STDOUT)
 			print out
-		except subprocess.CalledProcessError as e:	
+		except subprocess.CalledProcessError as e:
 			printout(e.output,RED)
 			sys.exit()
 
@@ -82,8 +82,8 @@ class Util:
 		for file in files:
 			if file.endswith(".symlink"):
 				source_file = "{dir}/{file}".format(**locals())
-				target_file = target + "/" + file.replace(".symlink","")				
-				print "\t{source_file} → {target_file}".format(**locals())				
+				target_file = target + "/" + file.replace(".symlink","")
+				print "\t{source_file} → {target_file}".format(**locals())
 				os.symlink(source_file,target_file)
 
 
@@ -96,7 +96,7 @@ class Util:
 # Though there are easy workarounds.
 HOME     = os.environ['HOME']
 DEV      = "developer"
-DOTFILES = "{HOME}/{DEV}/dotfiles".format(**locals()) # created by clone    
+DOTFILES = "{HOME}/{DEV}/dotfiles".format(**locals()) # created by clone
 HOMEBREW = "{HOME}/{DEV}/homebrew".format(**locals()) # created by brew
 CASKS    = "{HOME}/{DEV}/casks".format(**locals())
 Util.mkdir(CASKS)
@@ -115,7 +115,7 @@ os.symlink(HOMEBREW+"/bin",HOME+"/bin")
 
 os.environ['PATH'] = HOMEBREW + "/bin" + ":" + os.environ['PATH']
 
-# Install Brew formulas 
+# Install Brew formulas
 Util.handle_brewfiles(DOTFILES + "/brew")
 
 Util.symlink(DOTFILES,HOME)
@@ -134,7 +134,7 @@ os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-package",SUBLIME_SUPP
 os.symlink(DOTFILES+"/sublime_init/Package Control.sublime-settings",SUBLIME_SUPP+"/Packages/User/Package Control.sublime-settings")
 os.symlink(DOTFILES+"/sublime_init/Preferences.sublime-settings",SUBLIME_SUPP+"/Packages/User/Preferences.sublime-settings")
 os.symlink(DOTFILES+"/sublime_init/Tomorrow-Night-Eighties.tmTheme",SUBLIME_SUPP+"/Packages/User/Tomorrow-Night-Eighties.tmTheme")
-# 
+#
 Util.run(HOME+"/bin/vim +PluginInstall +qall")
 Util.run(HOME+"/.vim/bundle/YouCompleteMe/install.sh")
 # xcode-select --install

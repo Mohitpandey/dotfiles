@@ -1,10 +1,10 @@
-install caskroom/cask/brew-cask
+tap caskroom/cask
 
-cask install diffmerge
+
 cask install atom
 cask install iterm2
 
-tap caskroom/fonts 
+tap caskroom/fonts
 cask install font-anonymous-pro-for-powerline
 cask install font-anonymous-pro
-untap caskroom/fonts 
+untap caskroom/fonts

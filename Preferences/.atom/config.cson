@@ -1,0 +1,13 @@
+"*":
+  core:
+    themes: [
+      "solarized-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 12
+    softWrap: true
+  "exception-reporting":
+    userId: "bc03c154-3dd1-eafe-7e25-928c62dccad9"
+  welcome:
+    showOnStartup: false

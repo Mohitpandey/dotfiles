@@ -1,33 +1,31 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+set nocompatible              " dont care about the old vim
 
 set rtp+=~/.vim/bundle/vundle.vim/
 
 call vundle#begin()
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mbbill/undotree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-fugitive'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
-filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme solarized
 set nu
+
+set hlsearch
 
 if has("persistent_undo")
     set undodir='~/.undodir/'
     set undofile
 endif
-
-filetype on
-"set omnifunc=syntaxcomplete#Complete
 
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
