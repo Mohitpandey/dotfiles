@@ -1,8 +1,8 @@
 set nocompatible              " dont care about the old vim
 
-set rtp+=~/.vim/bundle/vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim/
 
-call vundle#begin()
+call vundle#begin('~/.vundle')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -11,15 +11,18 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mbbill/undotree'
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized
+" above stopped the installation and required manually pressing enter
+" since theme below was not found. Hence reverting to colors file"
 
 call vundle#end()
+filetype plugin indent on
 
 syntax on
 set background=dark
 colorscheme solarized
-set nu
 
+set nu
 set hlsearch
 
 if has("persistent_undo")

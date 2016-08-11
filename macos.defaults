@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
 # Credit: mathiasbynens and defaults command
+# simple way is to run: defaults read >/tmp/before
+# and set your prefernces and then run defaults read >/tmp/after
+# and then diff /tmp/before /tmp/after. That is what you need to set.
 
-# General
+#--------- General ----------- #
+
+# Save to local disk
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -12,29 +18,19 @@ defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+defaults write com.apple.CrashReporter DialogType -string "none"
+defaults write com.apple.systemuiserver menuExtras -array \
+	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-# Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
-# all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-#rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-#sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
-#sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
-# Set Desktop as the default location for new Finder windows
-# For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
-
-# defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
-
-# ------------------------------- #
-# Keyboard, Mouse/Trackpad setup
-# ------------------------------- #
+# -------- Keyboard, Mouse/Trackpad setup --------- #
 
 
 # Enable zoom with ctrl key
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -51,9 +47,9 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# ------------------------------- #
-# Screen/ Spaces
-# ------------------------------- #
+
+# ---------- Screen/Spaces ------------------#
+
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -81,17 +77,9 @@ defaults write com.apple.dock mru-spaces -bool false
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
-# --------------------------------------------- #
-# -----------------  FINDER/ DOCK ------------------- #
-# --------------------------------------------- #
 
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array ""
 
-# Finder: show hidden files by default
-# defaults write com.apple.finder AppleShowAllFiles -bool true
+# -----------------  FINDER/ DOCK ------------- #
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -105,6 +93,11 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
@@ -146,6 +139,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # top left screen corner → Start screen saver
 defaults write com.apple.dock wvous-tl-corner -int 10
@@ -165,6 +159,12 @@ defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 # Terminals
 
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+# Photos, please dont open every time a device is attached
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+# Dont want to ask for sudo but if you dont mind enable: changes default on sound vol
+# sudo nvram SystemAudioVolume=%30
 
 # EXEC
 killall Finder

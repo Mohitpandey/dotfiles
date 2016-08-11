@@ -33,3 +33,6 @@ alias ql='qlmanage -p 2>/dev/null'
 # use GREP_COLOR=7 to highlight whitespace on black terminals
 # LANG=C for speed. See also: http://www.pixelbeat.org/scripts/findrepo
 alias grep='GREP_COLOR="1;33;40" LANG=C grep --color=auto'
+
+# source in your functions
+source $ZDOTDIR/functions.sh
