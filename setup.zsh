@@ -18,12 +18,14 @@ function setup_prefs {
 }
 
 function install_brew {
-    if [ $(which -s brew) -eq 1  ]; then
+    which -s brew
+    if [[ $? -eq 1  ]]; then
       $(mkdir -p $HOMEBREW && \
         curl -L https://github.com/Homebrew/brew/tarball/master | \
         tar xz --strip 1 -C $HOMEBREW)
     else
-      e_warning "Brew already installed, skipping install!"
+      e_warning "Brew already installed, running update!"
+      $(brew update)
     fi
 }
 
