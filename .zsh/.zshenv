@@ -9,11 +9,7 @@ export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export ANDROID_BUILD_TOOLS="$ANDROID_HOME/build-tools/21.0.1"
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export JAVA_HOME=`/usr/libexec/java_home` # could also pass -v 1.8`
-export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk"
-export HOMEBREW_CASK_OPTS="--caskroom=$CASKS --appdir=$APPS"
-
-# This dedupes
-typeset -U  path
+export HOMEBREW_CASK_OPTS=" --appdir=$CASK_APP_LINKS"
 
 # This gets added to $PATH after deduping above
 path=(
