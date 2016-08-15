@@ -14,20 +14,11 @@ function to_binary {
   echo "/tmp/$target" # return statement
 }
 
-# first param is string to print
-# second is the unicode symbol (optional)
-function print {
-    local suffix=$2
-    if [ -z ${suffix} ]; then suffix="bold";else suffix="setaf $suffix";fi
-    color_out=$(tput $suffix)
-    reset=$(tput sgr0)
-    echo -e "${color_out}$1${reset}"
-}
-
 function unl {
-  $(cd)
+  $(cd ~)
   $(find . -type l -maxdepth 1 -exec unlink {} \;)
 }
+
 # courtesy natelandau
 bold=$(tput bold)
 underline=$(tput sgr 0 1)
