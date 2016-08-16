@@ -1,22 +1,22 @@
-#!/usr/bin/env zsh
-
-# set -x
+#!/usr/bin/env bash
 
 function to_plist {
-  local target=$(basename "$1")
-  echo "plutil -convert xml1 -o /tmp/$target $1"
-  $(plutil -convert xml1 -o /tmp/$target "$1")
+	local target
+	target=$(basename "$1")
+	echo "plutil -convert xml1 -o /tmp/$target $1"
+	plutil -convert xml1 -o "/tmp/$target" "$1"
 }
 
 function to_binary {
-  local target=$(basename "$1")
-  $(plutil -convert binary1 -o "/tmp/$target" "$1")
-  echo "/tmp/$target" # return statement
+	local target
+	target=$(basename "$1")
+	plutil -convert binary1 -o "/tmp/$target" "$1"
+	echo "/tmp/$target" # return statement
 }
 
 function unl {
-  $(cd ~)
-  $(find . -type l -maxdepth 1 -exec unlink {} \;)
+	cd ~
+	find . -type l -maxdepth 1 -exec unlink {} \;
 }
 
 # courtesy natelandau
@@ -31,33 +31,33 @@ tan=$(tput setaf 3)
 blue=$(tput setaf 38)
 
 function e_header() {
-  printf "\n${bold}${purple}==========  %s  ==========${reset}\n" "$@"
+	printf "\n${bold}${purple}==========  %s  ==========${reset}\n" "$@"
 }
 
 function e_arrow() {
-  printf "➜ $@\n"
+	printf "➜ $@\n"
 }
 
 function e_success() {
-  printf "${green}✔ %s${reset}\n" "$@"
+	printf "${green}✔ %s${reset}\n" "$@"
 }
 
 function e_error() {
-  printf "${red}✖ %s${reset}\n" "$@"
+	printf "${red}✖ %s${reset}\n" "$@"
 }
 
 function e_warning() {
-  printf "${tan}➜ %s${reset}\n" "$@"
+	printf "${tan}➜ %s${reset}\n" "$@"
 }
 
 function e_underline() {
-  printf "${underline}${bold}%s${reset}\n" "$@"
+	printf "${underline}${bold}%s${reset}\n" "$@"
 }
 
 function e_bold() {
-  printf "${bold}%s${reset}\n" "$@"
+	printf "${bold}%s${reset}\n" "$@"
 }
 
 function e_note() {
-  printf "${underline}${bold}${blue}Note:${reset}  ${blue}%s${reset}\n" "$@"
+	printf "${underline}${bold}${blue}Note:${reset}  ${blue}%s${reset}\n" "$@"
 }

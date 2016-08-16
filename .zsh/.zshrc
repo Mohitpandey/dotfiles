@@ -16,7 +16,7 @@ zplug load
 alias cls='clear'
 alias u='cd ..'
 alias src='source $ZDOTDIR/.zshrc'
-alias ezsh='edit $ZDOTDIR/.zshrc'
+alias ezsh='atom $ZDOTDIR/.zshrc'
 alias l='ls -G -ltr'
 alias la='ls -G -lat'
 alias ws="cd $HOME/developer/workspace"
