@@ -6,7 +6,7 @@ DOT_FILE_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 function brewer {
 	while read line; do
 		if [ ! -z "$line" ]; then
-			"$HOMEBREW/bin/brew" "$line" >/dev/null 2>&1
+			${HOMEBREW}/bin/brew "$line" >/dev/null 2>&1
 		fi
 	done <"${1}"
 }
