@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 DOT_FILE_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -36,11 +36,10 @@ function brew_formulas {
 }
 
 function setup_dot_dir {
-	e_note "Linking zdotdir and sourcing user overrides"
 	ln -s "$DOT_FILE_REPO/.zsh" ~
 	source "$HOME/.zsh/user.conf"
 	source "$HOME/.zsh/.zshenv"
-	source "$HOME/.zsh/functions.sh"
+	source "$HOME/.zsh/functions.zsh"
 }
 
 function setup_symlinks {
