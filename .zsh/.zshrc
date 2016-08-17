@@ -35,4 +35,4 @@ alias ql='qlmanage -p 2>/dev/null'
 alias grep='GREP_COLOR="1;33;40" LANG=C grep --color=auto'
 
 # source in your functions
-source $ZDOTDIR/functions.sh
+source $ZDOTDIR/functions.zsh

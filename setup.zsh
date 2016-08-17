@@ -6,6 +6,7 @@ DOT_FILE_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 function brewer {
 	while read line; do
 		if [ ! -z "$line" ]; then
+			e_arrow "brew $line"
 			${HOMEBREW}/bin/brew $line >/dev/null 2>&1
 		fi
 	done <"${1}"
@@ -30,7 +31,6 @@ function install_brew {
 }
 
 function brew_formulas {
-	e_note "Brewing formulas now..."
 	brewer "$DOT_FILE_REPO/brew/Brewfile"
 	brewer "$DOT_FILE_REPO/brew/Caskfile"
 }
@@ -53,18 +53,18 @@ function setup_symlinks {
 	ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs"     ~/iCloud
 }
 
-e_header      "System setup initiated!"
 setup_dot_dir
-e_note        "Trying to install Hombrew.."
+e_header         "System setup initiated!"
+e_note           "Trying to install Hombrew.."
 install_brew
+e_note           "Brewing formulas now..."
 brew_formulas
 setup_symlinks
 
-e_note "Setting up binary prefernces...."
-setup_prefs "com.googlecode.iterm2.plist"
-setup_prefs "com.apple.Terminal.plist"
-# Needed because on first startup after installation, it does not read the prefs
-# $(defaults read com.googlecode.iterm2 >/dev/null 2>&1)
+e_note           "Setting up binary prefernces...."
+setup_prefs      "com.googlecode.iterm2.plist"
+setup_prefs      "com.apple.Terminal.plist"
+
 
 # One time osx setup
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -72,7 +72,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # Install Vundle plugins : Do this last
-"$HOME/bin/vim" +PluginInstall +qall >/dev/null 2>&1
+`${HOME}/bin/vim +PluginInstall +qall >/dev/null 2>&1`
 
 e_success "Setup complete. Quit this terminal and start a new one."
 osascript -e "tell app \"Terminal\" to quit"
