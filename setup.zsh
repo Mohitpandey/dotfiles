@@ -72,7 +72,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # Install Vundle plugins : Do this last
-`${HOME}/bin/vim +PluginInstall +qall >/dev/null 2>&1`
+`${HOME}/bin/vim +PluginInstall +qall`
 
 e_success "Setup complete. Quit this terminal and start a new one."
 osascript -e "tell app \"Terminal\" to quit"
