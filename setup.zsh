@@ -1,6 +1,12 @@
 #!/usr/bin/env zsh
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REPO_URL="https://github.com/Mohitpandey/dotfiles"
+CLONE_DIR="dotfiles"
+
+git clone --recursive -b update_and_modernize $REPO_URL $CLONE_DIR
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/$CLONE_DIR"
+
 
 # install brews and casks
 function brewer {
