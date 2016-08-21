@@ -22,15 +22,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>357 258 255 234 0 0 1440 877 </string>
+	<string>694 437 255 235 0 0 2560 1417 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>929 650 445 103 0 0 2560 1417 </string>
+	<string>929 274 445 77 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTAppPreferences</key>
-	<string>390 191 665 533 0 0 1440 877 </string>
+	<string>1157 294 710 533 0 0 2560 1417 </string>
+	<key>NSWindow Frame TTWindow</key>
+	<string>89 730 970 597 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTWindow Basic</key>
 	<string>139 443 570 366 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow Solarized%20Dark%20Yosemite</key>
-	<string>522 193 985 574 0 0 2560 1417 </string>
+	<string>1062 266 865 542 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTWindow SolarizedDark</key>
 	<string>231 95 985 625 0 0 2560 1417 </string>
 	<key>ProfileCurrentVersion</key>
@@ -43,6 +45,8 @@
 	<string>Solarized%20Dark%20Yosemite</string>
 	<key>TTAppPreferences Selected Tab</key>
 	<integer>1</integer>
+	<key>TTInspector Selected Pane</key>
+	<string>Settings</string>
 	<key>Window Settings</key>
 	<dict>
 		<key>Basic</key>
@@ -808,35 +812,46 @@
 			</data>
 			<key>BlinkText</key>
 			<false/>
+			<key>CommandString</key>
+			<string></string>
+			<key>CursorBlink</key>
+			<true/>
 			<key>CursorColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdC
-			XE5TQ29sb3JTcGFjZVYkY2xhc3NPECcwLjEwNTg4MjM1MjkgMC40
-			NTA5ODAzOTIyIDAuNzg0MzEzNzI1NQAQAYAC0hAREhNaJGNsYXNz
+			XE5TQ29sb3JTcGFjZVYkY2xhc3NPECcwLjcxNjY3MTU4NjIgMC4y
+			MzI3MTA1Mjk5IDAuNzg0MzEzNzI1NQAQAYAC0hAREhNaJGNsYXNz
 			bmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNL
 			ZXllZEFyY2hpdmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCV
 			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
 			2Q==
 			</data>
 			<key>CursorType</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>DisableANSIColor</key>
 			<false/>
 			<key>Font</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5T
-			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AsAAAAAAAAEBCA
-			AoADXxASQW5vbnltaWNlUG93ZXJsaW5l0hMUFRZaJGNsYXNzbmFt
-			ZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVk
-			QXJjaGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4jZKd
-			pq2wucvO0wAAAAAAAAEBAAAAAAAAABwAAAAAAAAAAAAAAAAAAADV
+			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AqAAAAAAAAEBCA
+			AoADXxAlQW5vbnltaWNlUG93ZXJsaW5lTmVyZEZvbnRDb21wbGV0
+			ZS0tLdITFBUWWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250ohUX
+			WE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RobVHJvb3SAAQgR
+			GiMtMjc8QktSW2JpcnR2eKClsLnAw8ze4eYAAAAAAAABAQAAAAAA
+			AAAcAAAAAAAAAAAAAAAAAAAA6A==
 			</data>
 			<key>FontAntialias</key>
 			<true/>
+			<key>FontHeightSpacing</key>
+			<real>1</real>
+			<key>FontWidthSpacing</key>
+			<real>1</real>
 			<key>ProfileCurrentVersion</key>
 			<real>2.04</real>
+			<key>RunCommandAsShell</key>
+			<true/>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -848,6 +863,8 @@
 			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
 			2Q==
 			</data>
+			<key>ShouldLimitScrollback</key>
+			<integer>1</integer>
 			<key>ShowWindowSettingsNameInTitle</key>
 			<true/>
 			<key>TextBoldColor</key>
@@ -872,6 +889,8 @@
 			oKmxtL3P0tcAAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAA
 			2Q==
 			</data>
+			<key>UseBoldFonts</key>
+			<true/>
 			<key>UseBrightBold</key>
 			<true/>
 			<key>columnCount</key>

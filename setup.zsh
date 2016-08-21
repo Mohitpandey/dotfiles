@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-DOT_FILE_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # install brews and casks
 function brewer {
@@ -14,7 +14,7 @@ function brewer {
 
 function setup_prefs {
 	local temp
-	temp=$(to_binary "$DOT_FILE_REPO/Preferences/$1")
+	temp=$(to_binary "$DIR/Preferences/$1")
 	mv -v -f  "$temp" "$HOME/Library/Preferences"
 }
 
@@ -25,18 +25,18 @@ function install_brew {
 			curl -L "https://github.com/Homebrew/brew/tarball/master" | \
 			tar xz --strip 1 -C "$HOMEBREW"
 	else
-		e_warning "Brew already installed, running update!"
+		e_warning "Brew already installed, skipping!"
 		brew update
 	fi
 }
 
 function brew_formulas {
-	brewer "$DOT_FILE_REPO/brew/Brewfile"
-	brewer "$DOT_FILE_REPO/brew/Caskfile"
+	brewer "$DIR/brew/Brewfile"
+	brewer "$DIR/brew/Caskfile"
 }
 
 function setup_dot_dir {
-	ln -s "$DOT_FILE_REPO/.zsh" ~
+	ln -s "$DIR/.zsh" ~
 	source "$HOME/.zsh/user.conf"
 	source "$HOME/.zsh/.zshenv"
 	source "$HOME/.zsh/functions.zsh"
@@ -45,10 +45,10 @@ function setup_dot_dir {
 function setup_symlinks {
 	e_note "Setting up all symlinks now..."
 	ln -s "$HOME/.zsh/.zshenv"                                     ~
-	ln -s "$DOT_FILE_REPO/.vim/.vimrc"                             ~
-	ln -s "$DOT_FILE_REPO/.vim"                                    ~
-	ln -s "$DOT_FILE_REPO/.gitconfig"                              ~
-	ln -s "$DOT_FILE_REPO/Preferences/.atom"                       ~
+	ln -s "$DIR/.vim/.vimrc"                                       ~
+	ln -s "$DIR/.vim"                                              ~
+	ln -s "$DIR/.gitconfig"                                        ~
+	ln -s "$DIR/Preferences/.atom"                                 ~
 	ln -s "$HOMEBREW/bin"                                          ~/bin
 	ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs"     ~/iCloud
 }
@@ -68,11 +68,11 @@ setup_prefs      "com.apple.Terminal.plist"
 
 # One time osx setup
 if [[ "$(uname)" == "Darwin" ]]; then
-	source "$DOT_FILE_REPO/macos.defaults"
+	source "$DIR/macos.defaults"
 fi
 
 # Install Vundle plugins : Do this last
 `${HOME}/bin/vim +PluginInstall +qall`
 
-e_success "Setup complete. Quit this terminal and start a new one."
+e_header "Setup complete!"
 osascript -e "tell app \"Terminal\" to quit"

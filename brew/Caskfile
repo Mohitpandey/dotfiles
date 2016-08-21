@@ -6,4 +6,5 @@ cask install iterm2
 tap caskroom/fonts
 cask install font-anonymous-pro-for-powerline
 cask install font-anonymous-pro
+cask install font-awesome-terminal-fonts
 untap caskroom/fonts
