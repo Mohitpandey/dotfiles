@@ -37,7 +37,7 @@ function install_brew {
 		e_warning "Brew already installed, skipping!"
 		brew update
 	fi
-	if [[ !-e "$HOMEBREW/bin/brew" ]]; then
+	if [[ ! -e "$HOMEBREW/bin/brew" ]]; then
 		e_error "$HOMEBREW/bin/brew not found! Exiting!"
 		exit
 	fi
