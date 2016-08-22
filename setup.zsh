@@ -6,7 +6,7 @@ set -x
 REPO_URL="https://github.com/Mohitpandey/dotfiles"
 CLONE_DIR="dotfiles"
 
-$(git clone --recursive -b update_and_modernize $REPO_URL $CLONE_DIR)
+git clone --recursive -b update_and_modernize $REPO_URL $CLONE_DIR
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/$CLONE_DIR"
 
@@ -17,7 +17,7 @@ function brewer {
 	while read line; do
 		if [ ! -z "$line" ]; then
 			e_arrow "brew $line"
-			${HOMEBREW}/bin/brew $line >/dev/null 2>&1
+			${HOMEBREW}/bin/brew $line 1>/dev/null
 		fi
 	done <"${1}"
 }
@@ -36,6 +36,10 @@ function install_brew {
 	else
 		e_warning "Brew already installed, skipping!"
 		brew update
+	fi
+	if [[ !-e "$HOMEBREW/bin/brew" ]]; then
+		e_error "$HOMEBREW/bin/brew not found! Exiting!"
+		exit
 	fi
 }
 
