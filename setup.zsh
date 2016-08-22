@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 
-# zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/setup.zsh)"
+# zsh -c "$(curl -s https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/setup.zsh)"
 REPO_URL="https://github.com/Mohitpandey/dotfiles"
 CLONE_DIR="dotfiles"
 
@@ -29,6 +29,7 @@ function setup_prefs {
 function install_brew {
 	which -s brew
 	if [[ $? -eq 1  ]]; then
+		mkdir -p "$HOMEBREW" && \
 		git clone --depth 1 https://github.com/Homebrew/brew "$HOMEBREW"
 	else
 		e_warning "Brew already installed, skipping!"
