@@ -24,15 +24,15 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>694 437 255 235 0 0 2560 1417 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>929 274 445 77 0 0 2560 1417 </string>
+	<string>437 82 445 77 0 0 1440 877 </string>
 	<key>NSWindow Frame TTAppPreferences</key>
-	<string>1157 294 710 533 0 0 2560 1417 </string>
+	<string>473 114 710 533 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow</key>
-	<string>89 730 970 597 0 0 2560 1417 </string>
+	<string>26 249 970 597 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow Basic</key>
 	<string>139 443 570 366 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow Solarized%20Dark%20Yosemite</key>
-	<string>1062 266 865 542 0 0 2560 1417 </string>
+	<string>360 133 865 511 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow SolarizedDark</key>
 	<string>231 95 985 625 0 0 2560 1417 </string>
 	<key>ProfileCurrentVersion</key>
@@ -835,12 +835,11 @@
 			<data>
 			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5T
-			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AqAAAAAAAAEBCA
-			AoADXxAlQW5vbnltaWNlUG93ZXJsaW5lTmVyZEZvbnRDb21wbGV0
-			ZS0tLdITFBUWWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250ohUX
-			WE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RobVHJvb3SAAQgR
-			GiMtMjc8QktSW2JpcnR2eKClsLnAw8ze4eYAAAAAAAABAQAAAAAA
-			AAAcAAAAAAAAAAAAAAAAAAAA6A==
+			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AsAAAAAAAAEBCA
+			AoADXxASSW5jb25zb2xhdGFBd2Vzb21l0hMUFRZaJGNsYXNzbmFt
+			ZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVk
+			QXJjaGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4jZKd
+			pq2wucvO0wAAAAAAAAEBAAAAAAAAABwAAAAAAAAAAAAAAAAAAADV
 			</data>
 			<key>FontAntialias</key>
 			<true/>

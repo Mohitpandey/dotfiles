@@ -32,6 +32,3 @@ alias grep='GREP_COLOR="1;33;40" LANG=C grep --color=auto'
 
 # source in your functions
 source $ZDOTDIR/functions.zsh
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-POWERLEVEL9K_MODE='awesome-patched'

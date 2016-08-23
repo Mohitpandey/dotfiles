@@ -8,7 +8,7 @@ export ANDROID_HOME="$DEV/android/sdk"
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export ANDROID_BUILD_TOOLS="$ANDROID_HOME/build-tools/21.0.1"
 export ANDROID_TOOLS=$ANDROID_HOME/tools
-export JAVA_HOME=`/usr/libexec/java_home` # could also pass -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home 2>/dev/null` # could also pass -v 1.8`
 export HOMEBREW_CASK_OPTS=" --appdir=$CASK_APP_LINKS"
 
 # This gets added to $PATH after deduping above
@@ -26,3 +26,6 @@ export EDITOR='atom'
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+POWERLEVEL9K_MODE='awesome-patched'
