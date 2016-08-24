@@ -1,4 +1,4 @@
 update
 install zplug
-install vim
+install nvim
 cleanup

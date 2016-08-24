@@ -61,6 +61,8 @@ function setup_symlinks {
 	ln -s "$HOME/.zsh/.zshenv"                                     ~
 	ln -s "$DIR/.vim/.vimrc"                                       ~
 	ln -s "$DIR/.vim"                                              ~
+	ln -s "$HOME/.vim"                                             ~/.config/nvim
+	ln -s "$HOME/.vimrc"                                           ~/.config/nvim/init.vim
 	ln -s "$DIR/.gitconfig"                                        ~
 	ln -s "$DIR/Preferences/.atom"                                 ~
 	ln -s "$HOMEBREW/bin"                                          ~/bin
@@ -73,6 +75,7 @@ e_note           "Trying to install Hombrew.."
 install_brew
 e_note           "Brewing formulas now..."
 brew_formulas
+mkdir -p ~/.config/nvim
 setup_symlinks
 
 e_note           "Setting up binary prefernces...."
@@ -87,6 +90,7 @@ fi
 
 # Install Vundle plugins : Do this last
 `${HOME}/bin/vim +PluginInstall +qall`
+`${HOME}/bin/nvim +PluginInstall +qall`
 
 e_header "Setup complete!"
 osascript -e "tell app \"Terminal\" to quit"

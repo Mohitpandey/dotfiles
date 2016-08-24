@@ -1,13 +1,18 @@
 "*":
   core:
     themes: [
-      "solarized-dark-ui"
-      "solarized-dark-syntax"
+      "one-dark-ui"
+      "gruvbox-plus-syntax"
     ]
   editor:
-    fontSize: 12
+    fontFamily: "Inconsolata-Regular"
+    fontSize: 16
+    lineHeight: 1
     softWrap: true
+    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "bc03c154-3dd1-eafe-7e25-928c62dccad9"
+  "gruvbox-plus-syntax":
+    contrast: "Soft"
   welcome:
     showOnStartup: false

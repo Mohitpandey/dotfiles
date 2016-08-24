@@ -25,10 +25,11 @@ alias ass="adb start-server"
 alias aks="adb kill-server"
 alias gf="git-flow"
 alias showHidden='defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder'
-alias vi='vim'
+alias vi='nvim'
 alias hideHidden='defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder'
 alias ql='qlmanage -p 2>/dev/null'
 alias grep='GREP_COLOR="1;33;40" LANG=C grep --color=auto'
 
 # source in your functions
 source $ZDOTDIR/functions.zsh
+export JAVA_HOME=`/usr/libexec/java_home 2>/dev/null` # could also pass -v 1.8`
