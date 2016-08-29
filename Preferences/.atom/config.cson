@@ -6,7 +6,7 @@
     ]
   editor:
     fontFamily: "Inconsolata-Regular"
-    fontSize: 16
+    fontSize: 15
     lineHeight: 1
     softWrap: true
     softWrapAtPreferredLineLength: true
