@@ -11,7 +11,7 @@ function to_binary {
 	local target
 	target=$(basename "$1")
 	plutil -convert binary1 -o "/tmp/$target" "$1"
-	echo "/tmp/$target" # return statement
+	echo "/tmp/$target"
 }
 
 function unl {
@@ -23,7 +23,7 @@ function cmd_file_param {
 	while read line; do
 		if [ ! -z "$line" ]; then
 			e_arrow "$1 $line"
-			# "$2" "$line" 1>/dev/null
+			"$2" "$line" 1>/dev/null
 		fi
 	done <"${2}"
 }

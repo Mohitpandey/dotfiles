@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-
-# curl https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/setup.zsh -o setup.zsh &&  source setup.zsh
-
-# zsh -c "$(curl -s https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/setup.zsh)"
 REPO_URL="https://github.com/Mohitpandey/dotfiles"
 CLONE_DIR="dotfiles"
 
