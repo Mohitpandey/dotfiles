@@ -3,10 +3,9 @@
 #### Screenshots
 
 ##### iTerm
-![alt tag](https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/pages/iterm.png)
-
+<img src="https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/pages/iterm.png" width="500">
 ##### Atom
-![alt tag](https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/pages/atom.png)
+<img src="https://raw.githubusercontent.com/Mohitpandey/dotfiles/update_and_modernize/pages/atom.png" width="500">
 
 #### Installation
 
