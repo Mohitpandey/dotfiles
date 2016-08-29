@@ -5,5 +5,4 @@ dev
 .node-gyp
 .apm
 blob-store
-Preferences/.atom/packages/
-!Preferences/.atom/packages/package-sync
+packages

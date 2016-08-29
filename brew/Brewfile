@@ -1,4 +1,14 @@
-update
-install zplug
-install nvim
-cleanup
+brew update
+brew install zplug
+brew install neovim/neovim/neovim
+
+brew cask install atom
+brew cask install iterm2
+
+brew tap caskroom/fonts
+brew cask install font-anonymous-pro-for-powerline
+brew cask install font-anonymous-pro
+brew cask install font-awesome-terminal-fonts
+brew untap caskroom/fonts
+
+brew cleanup

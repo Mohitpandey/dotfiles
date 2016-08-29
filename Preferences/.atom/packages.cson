@@ -1,7 +1,1 @@
-packages: [
-  "gruvbox-plus-syntax"
-  "language-swift"
-  "linter"
-  "package-sync"
-  "solarized-dark-ui"
-]
+gruvbox-plus-syntax

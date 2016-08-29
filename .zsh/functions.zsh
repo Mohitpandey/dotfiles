@@ -19,6 +19,15 @@ function unl {
 	find . -type l -maxdepth 1 -exec unlink {} \;
 }
 
+function cmd_file_param {
+	while read line; do
+		if [ ! -z "$line" ]; then
+			e_arrow "$1 $line"
+			# "$2" "$line" 1>/dev/null
+		fi
+	done <"${2}"
+}
+
 # courtesy natelandau
 bold=$(tput bold)
 underline=$(tput sgr 0 1)

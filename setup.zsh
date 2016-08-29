@@ -7,21 +7,9 @@
 REPO_URL="https://github.com/Mohitpandey/dotfiles"
 CLONE_DIR="dotfiles"
 
-git clone --recursive -b update_and_modernize $REPO_URL $CLONE_DIR
+git clone --recursive -b update_and_modernize --depth 1 $REPO_URL $CLONE_DIR
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/$CLONE_DIR"
-
-echo "---> $DIR"
-
-# install brews and casks
-function brewer {
-	while read line; do
-		if [ ! -z "$line" ]; then
-			e_arrow "brew $line"
-			${HOMEBREW}/bin/brew $line 1>/dev/null
-		fi
-	done <"${1}"
-}
 
 function setup_prefs {
 	local temp
@@ -45,8 +33,11 @@ function install_brew {
 }
 
 function brew_formulas {
-	brewer "$DIR/brew/Brewfile"
-	brewer "$DIR/brew/Caskfile"
+	source "$DIR/brew/Brewfile"
+}
+
+function atom_package_installer {
+		cmd_file_param "apm install"  "Preferences/.atom/packages.cson"
 }
 
 function setup_dot_dir {
@@ -82,6 +73,8 @@ e_note           "Setting up binary prefernces...."
 setup_prefs      "com.googlecode.iterm2.plist"
 setup_prefs      "com.apple.Terminal.plist"
 
+e_note 	         "Installing atom packages"
+atom_package_installer
 
 # One time osx setup
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -89,7 +82,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # Install Vundle plugins : Do this last
-`${HOME}/bin/vim +PluginInstall +qall`
 `${HOME}/bin/nvim +PluginInstall +qall`
 
 e_header "Setup complete!"
