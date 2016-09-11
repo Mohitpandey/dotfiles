@@ -5,7 +5,7 @@
       "gruvbox-plus-syntax"
     ]
   editor:
-    fontFamily: "Inconsolata-Regular"
+    fontFamily: "Inconsolata Awesome"
     fontSize: 15
     lineHeight: 1
     softWrap: true

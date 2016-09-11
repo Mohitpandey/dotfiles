@@ -17,7 +17,7 @@ function install_brew {
 	which -s brew
 	if [[ $? -eq 1  ]]; then
 		mkdir -p "$HOMEBREW" && \
-		git clone --depth 1 https://github.com/Homebrew/brew "$HOMEBREW"
+			git clone --depth 1 https://github.com/Homebrew/brew "$HOMEBREW"
 	else
 		e_warning "Brew already installed, skipping!"
 		brew update
@@ -28,12 +28,12 @@ function install_brew {
 	fi
 }
 
-function brew_formulas {
-	source "$DIR/brew/Brewfile"
+function atom_package_installer {
+	cmd_file_param "apm install"  "Preferences/.atom/packages.cson"
 }
 
-function atom_package_installer {
-		cmd_file_param "apm install"  "Preferences/.atom/packages.cson"
+function brew_formulas {
+	cmd_file_param "$HOMEBREW/bin/brew "  "$DIR/brew/Brewfile"
 }
 
 function setup_dot_dir {
@@ -45,15 +45,15 @@ function setup_dot_dir {
 
 function setup_symlinks {
 	e_note "Setting up all symlinks now..."
-	ln -s "$HOME/.zsh/.zshenv"                                     ~
-	ln -s "$DIR/.vim/.vimrc"                                       ~
-	ln -s "$DIR/.vim"                                              ~
-	ln -s "$HOME/.vim"                                             ~/.config/nvim
-	ln -s "$HOME/.vimrc"                                           ~/.config/nvim/init.vim
-	ln -s "$DIR/.gitconfig"                                        ~
-	ln -s "$DIR/Preferences/.atom"                                 ~
-	ln -s "$HOMEBREW/bin"                                          ~/bin
-	ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs"     ~/iCloud
+	ln -s "$HOME/.zsh/.zshenv"                                 ~
+	ln -s "$DIR/.vim/.vimrc"                                   ~
+	ln -s "$DIR/.vim"                                          ~
+	ln -s "$HOME/.vim"                                         ~/.config/nvim
+	ln -s "$HOME/.vimrc"                                       ~/.config/nvim/init.vim
+	ln -s "$DIR/.gitconfig"                                    ~
+	ln -s "$DIR/Preferences/.atom"                             ~
+	ln -s "$HOMEBREW/bin"                                      ~/bin
+	ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ~/iCloud
 }
 
 setup_dot_dir
@@ -74,6 +74,7 @@ atom_package_installer
 
 # One time osx setup
 if [[ "$(uname)" == "Darwin" ]]; then
+	e_note "Setting MacOS defaults..."
 	source "$DIR/macos.defaults"
 fi
 

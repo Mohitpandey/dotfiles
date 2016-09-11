@@ -1,14 +1,13 @@
-$HOMEBREW/bin/brew update
-$HOMEBREW/bin/brew install zplug
-$HOMEBREW/bin/brew install neovim/neovim/neovim
+update
+install zplug
+install neovim/neovim/neovim
 
-$HOMEBREW/bin/brew cask install atom
-$HOMEBREW/bin/brew cask install iterm2
+cask install atom
+cask install iterm2
 
-$HOMEBREW/bin/brew tap caskroom/fonts
-$HOMEBREW/bin/brew cask install font-anonymous-pro-for-powerline
-$HOMEBREW/bin/brew cask install font-anonymous-pro
-$HOMEBREW/bin/brew cask install font-awesome-terminal-fonts
-$HOMEBREW/bin/brew untap caskroom/fonts
+tap caskroom/fonts
+cask install font-awesome-terminal-fonts
+untap caskroom/fonts
 
-$HOMEBREW/bin/brew cleanup
+cleanup
+cask cleanup

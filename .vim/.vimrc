@@ -24,11 +24,6 @@ let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox
 set nu
 
-if has("persistent_undo")
-    set undodir='~/.undodir/'
-    set undofile
-endif
-
 filetype on
 
 set colorcolumn=110
@@ -49,3 +44,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+set nobackup
+
+set noswapfile

@@ -19,11 +19,15 @@ function unl {
 	find . -type l -maxdepth 1 -exec unlink {} \;
 }
 
+function colors {
+	for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
+}
+
 function cmd_file_param {
 	while read line; do
 		if [ ! -z "$line" ]; then
 			e_arrow "$1 $line"
-			"$2" "$line" 1>/dev/null
+			$("$2" "$line" 1>/dev/null)
 		fi
 	done <"${2}"
 }

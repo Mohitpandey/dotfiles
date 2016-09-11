@@ -6,3 +6,5 @@ dev
 .apm
 blob-store
 packages
+.zsh/.zcompdump
+.vim/bundle/*

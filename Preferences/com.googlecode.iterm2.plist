@@ -856,14 +856,16 @@
 	<string>2713 959 606 456 2560 540 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 374 620 392 0 0 1440 877 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1172 308 918 495 0 0 2560 1417 </string>
+	<string>531 140 918 381 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>941 670 1417 747 0 0 2560 1417 </string>
+	<string>363 386 1065 408 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1032 404 1265 491 0 0 2560 1417 </string>
+	<string>97 56 1161 813 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1294 642 1057 539 0 0 2560 1417 </string>
+	<string>330 392 1065 387 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>139 647 1113 539 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -1194,13 +1196,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.52444487810134888</real>
+				<real>0.42204833030700684</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.67937779426574707</real>
+				<real>0.54463815689086914</real>
 				<key>Red Component</key>
-				<real>0.73665422201156616</real>
+				<real>0.58992093801498413</real>
 			</dict>
 			<key>Guid</key>
 			<string>B6C134D8-E612-4892-941C-48FD08487D45</string>
@@ -1688,7 +1690,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1793,7 +1795,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-24T04:31:33Z</date>
+	<date>2016-09-09T15:29:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1841,7 +1843,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.8</string>
+	<string>3.0.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
