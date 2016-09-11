@@ -29,7 +29,7 @@ function install_brew {
 }
 
 function atom_package_installer {
-	cmd_file_param "apm install"  "Preferences/.atom/packages.cson"
+	cmd_file_param "apm install"  "$DIR/Preferences/.atom/packages.cson"
 }
 
 function brew_formulas {

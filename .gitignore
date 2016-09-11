@@ -8,3 +8,4 @@ blob-store
 packages
 .zsh/.zcompdump
 .vim/bundle/*
+.DS_Store
