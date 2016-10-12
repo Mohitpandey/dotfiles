@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 function to_plist {
 	local target
 	target=$(basename "$1")
