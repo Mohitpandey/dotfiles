@@ -21,7 +21,7 @@ function cmd_file_param {
 	while read line; do
 		if [ ! -z "$line" ]; then
 			e_arrow "$1 $line"
-			$1 $line 1>/dev/null
+			$1 $line
 		fi
 	done <"${2}"
 }
