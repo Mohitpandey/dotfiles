@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 REPO_URL="https://github.com/Mohitpandey/dotfiles"
 CLONE_DIR="dotfiles"
