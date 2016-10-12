@@ -2,6 +2,7 @@ export ZDOTDIR=$HOME/.zsh
 source $ZDOTDIR/user.conf
 export ZPLUG_CLONE_DEPTH=1
 export ZPLUG_HOME=$HOMEBREW/opt/zplug
+export HISTFILE=~/.histfile
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -10,11 +11,13 @@ export ANDROID_BUILD_TOOLS="$ANDROID_HOME/build-tools/24.0.2"
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export HOMEBREW_CASK_OPTS=" --appdir=$CASK_APP_LINKS"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+setopt APPEND_HISTORY
 
 # This gets added to $PATH after deduping above
 path=(
   /usr/local/{bin,sbin}
   ~/bin
+  $HOMEBREW/opt/gnupg/libexec/gpgbin
   $ANDROID_PLATFORM_TOOLS
   $ANDROID_TOOLS
   $ANDROID_BUILD_TOOLS
