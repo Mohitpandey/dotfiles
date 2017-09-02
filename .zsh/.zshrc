@@ -1,7 +1,8 @@
 source $ZPLUG_HOME/init.zsh
 
+zstyle :zplug:tag depth 1
 zplug "git/git", as:command, use:"contrib/completion/git-completion.zsh"
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 if ! zplug check; then

@@ -3,7 +3,7 @@ filetype off                  " required!
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-set rtp+=~/.vim/bundle/vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'ervandew/supertab'
@@ -12,16 +12,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mbbill/undotree'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'} "colorscheme Tomorrow-Night-Eighties
-Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax on
 set background=dark
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='soft'
-colorscheme gruvbox
+colorscheme Tomorrow-Night-Eighties
 set nu
 
 filetype on

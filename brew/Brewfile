@@ -1,12 +1,13 @@
 update
 install zplug
-install neovim/neovim/neovim
+install neovim
 
 cask install atom
 cask install iterm2
 
 tap caskroom/fonts
 cask install font-awesome-terminal-fonts
+cask install font-source-code-pro
 untap caskroom/fonts
 
 cleanup
