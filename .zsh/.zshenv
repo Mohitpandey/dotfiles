@@ -21,6 +21,7 @@ path=(
   $ANDROID_PLATFORM_TOOLS
   $ANDROID_TOOLS
   $ANDROID_BUILD_TOOLS
+  $GOPATH/bin 
   $path
 )
 
