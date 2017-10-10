@@ -1,6 +1,6 @@
 update
 install zplug
-install neovim
+
 
 cask install atom
 cask install iterm2
