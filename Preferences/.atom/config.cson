@@ -2,8 +2,8 @@
   core:
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "gruvbox-plus-syntax"
+      "atom-dark-ui"
+      "tomorrow-night-eighties-syntax"
     ]
   editor:
     fontFamily: "Inconsolata Awesome"
