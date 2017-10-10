@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Default Window Settings</key>
-	<string>Gruvbox-dark</string>
+	<string>Tomorrow%20Night%20Eighties</string>
 	<key>DefaultProfilesVersion</key>
 	<integer>1</integer>
 	<key>HasMigratedDefaults</key>
@@ -11,7 +11,7 @@
 	<key>Man Page Window Settings</key>
 	<string>Man Page</string>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
+	<string>1, 2</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -24,29 +24,29 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>357 110 255 234 0 0 1440 877 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1728 139 445 211 0 0 2560 1417 </string>
+	<string>867 106 906 428 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTAppPreferences</key>
-	<string>1709 486 665 533 0 0 2560 1417 </string>
+	<string>1235 232 667 533 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTWindow</key>
 	<string>159 662 970 597 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTWindow Basic</key>
 	<string>139 443 570 366 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow Gruvbox-dark</key>
-	<string>942 263 985 570 0 0 2560 1417 </string>
+	<string>782 300 985 570 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTWindow Solarized%20Dark%20Yosemite</key>
 	<string>6 366 850 511 0 0 1440 877 </string>
 	<key>NSWindow Frame TTWindow SolarizedDark</key>
 	<string>231 95 985 625 0 0 2560 1417 </string>
 	<key>NSWindow Frame TTWindow Tomorrow%20Night%20Eighties</key>
-	<string>651 373 780 504 0 0 1440 877 </string>
+	<string>83 -68 1201 732 0 0 2560 1417 </string>
 	<key>ProfileCurrentVersion</key>
-	<real>2.04</real>
+	<real>2.0499999999999998</real>
 	<key>SecureKeyboardEntry</key>
 	<false/>
 	<key>Shell</key>
 	<string>/bin/zsh</string>
 	<key>Startup Window Settings</key>
-	<string>Gruvbox-dark</string>
+	<string>Tomorrow%20Night%20Eighties</string>
 	<key>TTAppPreferences Selected Tab</key>
 	<integer>1</integer>
 	<key>TTInspector Selected Pane</key>
@@ -70,7 +70,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>name</key>
 			<string>Basic</string>
 			<key>type</key>
@@ -113,7 +113,7 @@
 			<key>FontAntialias</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -367,7 +367,7 @@
 			<key>FontWidthSpacing</key>
 			<integer>1</integer>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -474,7 +474,7 @@
 			<key>FontAntialias</key>
 			<false/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -537,7 +537,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>name</key>
 			<string>Man Page</string>
 			<key>rowCount</key>
@@ -581,7 +581,7 @@
 			<key>FontAntialias</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -647,7 +647,7 @@
 			<key>FontWidthSpacing</key>
 			<real>0.99596774193548387</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -724,7 +724,7 @@
 			<key>FontWidthSpacing</key>
 			<real>0.99596774193548387</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -804,7 +804,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -890,7 +890,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>SelectionColor</key>
 			<data>
 			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
@@ -1138,7 +1138,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>RunCommandAsShell</key>
 			<true/>
 			<key>SelectionColor</key>
@@ -1227,18 +1227,18 @@
 			<data>
 			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5T
-			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AsAAAAAAAAEBCA
-			AoADXxASQW5vbnltaWNlUG93ZXJsaW5l0hMUFRZaJGNsYXNzbmFt
-			ZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVk
-			QXJjaGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4jZKd
-			pq2wucvO0wAAAAAAAAEBAAAAAAAAABwAAAAAAAAAAAAAAAAAAADV
+			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AmAAAAAAAAEBCA
+			AoADXU1lbmxvLVJlZ3VsYXLSExQVFlokY2xhc3NuYW1lWCRjbGFz
+			c2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZl
+			ctEaG1Ryb290gAEIERojLTI3PEJLUltiaXJ0dniGi5afpqmyxMfM
+			AAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAM4=
 			</data>
 			<key>FontAntialias</key>
 			<true/>
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>RunCommandAsShell</key>
 			<false/>
 			<key>SelectionColor</key>
@@ -1421,7 +1421,7 @@
 			<key>FontWidthSpacing</key>
 			<real>1.004032258064516</real>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>name</key>
 			<string>Solid Colors</string>
 			<key>type</key>
@@ -1635,7 +1635,7 @@
 			<data>
 			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
 			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5T
-			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AsAAAAAAAAEBCA
+			U2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNsYXNzI0AwAAAAAAAAEBCA
 			AoADXxASSW5jb25zb2xhdGFBd2Vzb21l0hMUFRZaJGNsYXNzbmFt
 			ZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVk
 			QXJjaGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4jZKd
@@ -1648,7 +1648,7 @@
 			<key>Linewrap</key>
 			<true/>
 			<key>ProfileCurrentVersion</key>
-			<real>2.04</real>
+			<real>2.0499999999999998</real>
 			<key>ScrollbackLines</key>
 			<real>0.0</real>
 			<key>SelectionColor</key>
