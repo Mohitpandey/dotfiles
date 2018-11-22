@@ -13,19 +13,10 @@ function setup_prefs {
 	mv -v -f  "$temp" "$HOME/Library/Preferences"
 }
 
-function install_brew {
-	which -s brew
-	if [[ $? -eq 1  ]]; then
-		mkdir -p "$HOMEBREW" && \
-			git clone --depth 1 https://github.com/Homebrew/brew "$HOMEBREW"
-	else
-		e_warning "Brew already installed, skipping!"
-		brew update
-	fi
-	if [[ ! -e "$HOMEBREW/bin/brew" ]]; then
-		e_error "$HOMEBREW/bin/brew not found! Exiting!"
-		exit
-	fi
+function install_brew {	
+	#homebrew requires sudo to create and modify some directories and their permssions
+	#run that as a pre step - stored in notes
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 function atom_package_installer {
