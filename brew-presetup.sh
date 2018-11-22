@@ -6,4 +6,5 @@
 /bin/mkdir -p /Library/Caches/Homebrew
 /bin/chmod g+rwx /Library/Caches/Homebrew
 /usr/sbin/chown $USER /Library/Caches/Homebrew
+/usr/sbin/chown $USER /usr/local/Homebrew
 /bin/mkdir -p /Users/$USER/Library/Caches/Homebrew
