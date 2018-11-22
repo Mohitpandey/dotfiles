@@ -14,7 +14,7 @@ function setup_prefs {
 }
 
 function install_brew {
-	source $CLONE_DIR/brew-presetup.sh
+	source "$CLONE_DIR/brew-presetup.sh"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
