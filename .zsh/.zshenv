@@ -8,7 +8,6 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export ANDROID_BUILD_TOOLS="$ANDROID_HOME/build-tools/24.0.2"
 export ANDROID_TOOLS=$ANDROID_HOME/tools
-export HOMEBREW_CASK_OPTS=" --appdir=$CASK_APP_LINKS"
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GOPATH=$HOME/dev/go
 setopt APPEND_HISTORY
@@ -17,7 +16,6 @@ setopt APPEND_HISTORY
 path=(
   /usr/local/{bin,sbin}
   ~/bin
-  $HOMEBREW/opt/gnupg/libexec/gpgbin
   $ANDROID_PLATFORM_TOOLS
   $ANDROID_TOOLS
   $ANDROID_BUILD_TOOLS
