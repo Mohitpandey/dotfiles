@@ -16,7 +16,7 @@ function setup_prefs {
 function install_brew {	
 	#homebrew requires sudo to create and modify some directories and their permssions
 	#run that as a pre step - stored in notes
-	sudo /bin/bash CLONE_DIR/brew-presetup
+	sudo source CLONE_DIR/brew-presetup
 	sudo su $USER
 	touch /usr/local/testFailed
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
