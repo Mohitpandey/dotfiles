@@ -11,4 +11,3 @@
 /usr/bin/sudo /usr/sbin/chown $USER /Library/Caches/Homebrew
 /usr/bin/sudo /usr/sbin/chown $USER /usr/local/Homebrew
 /bin/mkdir -p /Users/$USER/Library/Caches/Homebrew
-sudo su $USER
