@@ -14,6 +14,7 @@ function setup_prefs {
 }
 
 function install_brew {
+	source $CLONE_DIR/brew-presetup.sh
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
@@ -41,7 +42,6 @@ function setup_symlinks {
 	ln -s "$HOME/.vimrc"                                       ~/.config/nvim/init.vim
 	ln -s "$DIR/.gitconfig"                                    ~
 	ln -s "$DIR/Preferences/.atom"                             ~
-	ln -s "$HOMEBREW/bin"                                      ~/bin
 	ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs" ~/iCloud
 }
 
@@ -68,7 +68,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # Install Vundle plugins : Do this last
-`${HOME}/bin/nvim +PluginInstall +qall`
+`vim +PluginInstall +qall`
 
 e_header "Setup complete!"
 osascript -e "tell app \"Terminal\" to quit"
