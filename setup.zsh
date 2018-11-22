@@ -15,7 +15,7 @@ function setup_prefs {
 
 function install_brew {
 	./$CLONE_DIR/brew-presetup.sh
-	touch /usr/local/failed
+	sudo touch /usr/local/failed
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
