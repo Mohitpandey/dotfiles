@@ -12,13 +12,15 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mbbill/undotree'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'} "colorscheme Tomorrow-Night-Eighties
+Plugin 'sheerun/vim-polyglot'
+Plugin 'trevordmiller/nova-vim'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme nova
 set nu
 
 filetype on
