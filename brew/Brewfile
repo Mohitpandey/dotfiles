@@ -1,6 +1,7 @@
 update
 install zplug
 install node
+install hugo
 
 cask install iterm2
 
