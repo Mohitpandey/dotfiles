@@ -19,10 +19,6 @@ function install_brew {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
-function atom_package_installer {
-	`~/Applications/Atom.app/Contents/Resources/app/apm/bin/apm install  --packages-file "$DIR/Preferences/.atom/packages.cson"`
-}
-
 function brew_formulas {
 	cmd_file_param "$HOMEBREW/bin/brew "  "$DIR/brew/Brewfile"
 }
@@ -58,9 +54,6 @@ setup_symlinks
 e_note           "Setting up binary prefernces...."
 setup_prefs      "com.googlecode.iterm2.plist"
 setup_prefs      "com.apple.Terminal.plist"
-
-e_note 	         "Installing atom packages"
-atom_package_installer
 
 # One time osx setup
 if [[ "$(uname)" == "Darwin" ]]; then
