@@ -16,7 +16,7 @@ function setup_prefs {
 function install_brew {
 	./$CLONE_DIR/brew-presetup.sh
 	e_note "Done with brew pre steps"
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 }
 
 function brew_formulas {
